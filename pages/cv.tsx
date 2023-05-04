@@ -1,3 +1,4 @@
+import NavigationBar from '@/src/components/Navbar';
 import cvData from '@/src/data/cvData.json';
 import { splitSummaryIntoParagraphs } from '@/src/helpers/common';
 import Footer from '@/src/shared-components/Footer';
@@ -7,8 +8,7 @@ import styled from 'styled-components';
 const CvContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: auto;
+    align-items: flex-start !important;
 `;
 
 const CvContent = styled.div`
@@ -21,17 +21,16 @@ const CvRow = styled.div`
     align-items: center;
 
     @media (max-width: 85rem) {
-      padding: 6rem 0 !important;
-  }
+        padding: 6rem 0 !important;
+    }
 
     @media (max-width: 45rem) {
-      padding: 4rem 0 !important;
-  }
+        padding: 4rem 0 !important;
+    }
 `;
 
 const CvTitle = styled.h1`
-    padding-top: 8rem;
-    font-size: 2.5rem;
+    padding-top: 14rem;
 `;
 
 const SectionHeader = styled.h2`
@@ -44,6 +43,7 @@ const Cv = () => {
 
     return (
         <CvContainer className='page-container'>
+            <NavigationBar />
             <CvTitle className='header-text'>Curriculum Vitae.</CvTitle>
             <CvContent>
                 <div className='row'>

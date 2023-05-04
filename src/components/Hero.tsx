@@ -1,4 +1,3 @@
-import heroImage from '@public/hero-image.png';
 import { Container } from 'react-bootstrap';
 import Typed from 'react-typed';
 import styled from 'styled-components';
@@ -6,16 +5,19 @@ import styled from 'styled-components';
 const HeroImage = styled.div`
     position: relative;
     height: 90vh;
+    background-image: url('/ts.jpg');
     background-size: cover;
     background-position: center;
     object-fit: cover;
+    width: 100% !important;
+
 `;
 
 const HeroContent = styled(Container)`
     display: flex;
-    align-content: center;
     height: 100%;
     width: auto !important;
+    align-items: center;
 `;
 
 const HeroText = styled.h1`
@@ -28,8 +30,8 @@ const HeroText = styled.h1`
 
 const Hero = () => {
     return (
-        <HeroImage style={{ backgroundImage: `url(${heroImage})` }}>
-            <HeroContent className='page-container hero-content'>
+        <HeroImage>
+            <HeroContent className='page-container'>
                 <div>
                     <HeroText>
                         <span>Hello, I am</span><br />

@@ -1,13 +1,14 @@
+import NavigationBar from '@/src/components/Navbar';
 import ProjectData from '@/src/data/projectData.json';
 import { splitSummaryIntoParagraphs } from '@/src/helpers/common';
+import Footer from '@/src/shared-components/Footer';
 import ProjectItem from '@/src/shared-components/ListItem';
 import styled from 'styled-components';
 
 const ProjectsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: auto;
+    align-items: flex-start !important;
 `;
 
 const ProjectContent = styled.div`
@@ -20,17 +21,16 @@ const ProjectRow = styled.div`
     align-items: center;
 
     @media (max-width: 85rem) {
-      padding: 6rem 0 !important;
-  }
+        padding: 6rem 0 !important;
+    }
 
     @media (max-width: 45rem) {
-      padding: 4rem 0 !important;
-  }
+        padding: 4rem 0 !important;
+    }
 `;
 
 const ProjectTitle = styled.h1`
-    padding-top: 8rem;
-    font-size: 2.5rem;
+    padding-top: 14rem;
 `;
 
 const Projects = () => {
@@ -38,7 +38,8 @@ const Projects = () => {
 
     return (
         <ProjectsContainer className='page-container'>
-            <ProjectTitle className='header-text projects-title'>Projects.</ProjectTitle>
+            <NavigationBar />
+            <ProjectTitle className='header-text'>Projects.</ProjectTitle>
             <ProjectContent>
                 <div className='row'>
                     {projectsList.map((item, index) => (
@@ -47,6 +48,7 @@ const Projects = () => {
                         </ProjectRow>
                     ))}
                 </div>
+                <Footer />
             </ProjectContent>
         </ProjectsContainer>
     );

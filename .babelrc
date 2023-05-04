@@ -1,25 +1,25 @@
 {
-    "presets": [
-        "next/babel"
-    ],
-    "plugins": [
-        [
-            "module-resolver",
-            {
-                "root": [
-                    "./"
-                ],
-                "alias": {
-                    "@/src": "./src",
-                    "@/public": "./public"
-                }
-            }
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
         ],
-        [
-            "styled-components",
-            {
-                "ssr": true
-            }
-        ]
+        "alias": {
+          "@/src": "./src",
+          "@/public": "./public"
+        }
+      }
+    ],
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
     ]
+  ]
 }

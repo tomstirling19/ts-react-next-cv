@@ -1,70 +1,126 @@
-// import { useState } from 'react';
-// import { Nav, Navbar } from 'react-bootstrap';
-// import { FaBars } from 'react-icons/fa';
-// import styled from 'styled-components';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { ButtonHTMLAttributes, useState } from 'react';
+import { Navbar } from 'react-bootstrap';
+import { FaBars } from 'react-icons/fa';
+import styled from 'styled-components';
 
-// const NavigationBar = () => {
-//   const [expanded, setExpanded] = useState(false);
+interface StyledNavLinkProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    borderRight?: boolean;
+}
 
-//   const toggleNavbar = () => {
-//     setExpanded(!expanded);
-//   };
+const StyledNavbar = styled(Navbar)`
+    justify-content: flex-start !important;
+    flex-direction: row !important;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    margin-top: 5rem !important;
+`;
 
-//   const StyledNavbar = styled(Navbar)`
-//   justify-content: flex-start !important;
-//   flex-direction: row !important;
-// `;
+const StyledNavbarToggle = styled(Navbar.Toggle)`
+    display: none;
 
-//   const StyledNavbarToggle = styled(Navbar.Toggle)`
-//   min-width: 6rem !important;
-//   max-width: 6rem;
-//   border: 2px solid rgba(150, 180, 255, 1) !important;
-//   background-color: rgba(150, 180, 255, 0.75) !important;
-// `;
+    @media (max-width: 641px) {
+        display: block;
+    }
 
-//   const StyledNavbarCollapse = styled(Navbar.Collapse)`
-//   @media (max-width: 991px) {
-//     background-color: rgba(150, 180, 255, 0.95) !important;
-//   }
-// `;
+    min-width: 6rem !important;
+    max-width: 6rem;
+    border: 2px solid rgba(150, 180, 255, 1) !important;
+    background-color: rgba(150, 180, 255, 0.75) !important;
+`;
 
-//   const StyledNav = styled(Nav)`
-//   flex-direction: row !important;
-// `;
+const StyledNavbarCollapse = styled(Navbar.Collapse)`
+    @media (max-width: 991px) {
+        background-color: rgba(150, 180, 255, 0.95) !important;
+    }
+`;
 
-//   const StyledNavLink = styled(Nav.Link)`
-//   padding: 0 1rem !important;
-//   border-right-width: 1px;
-//   border-right-style: solid;
+const StyledNav = styled.nav`
+    flex-direction: row !important;
+    display: flex;
+`;
 
-//   &:hover {
-//     font-weight: bold;
-//   }
+const StyledNavLink = styled.button<StyledNavLinkProps>`
+    display: block;
+    padding: 0 1rem !important;
+    background: none;
+    border: none;
+    font-family: inherit;
+    line-height: 1rem !important;
+    font-size: .9rem !important;
 
-//   &.active {
-//     background-color: rgba(150, 180, 255, 0.75);
-//   }
-// `;
+    &:hover {
+        font-weight: 600;
+        text-decoration: none !important;
+    }
 
-//   return (
-//     <StyledNavbar
-//       className={`page-container primary-text ${expanded ? 'navbar-expanded' : ''}`}
-//       expand='lg'
-//       expanded={expanded}
-//       fixed='top'
-//     >
-//       <StyledNavbarToggle aria-controls='basic-navbar-nav' onClick={toggleNavbar}>
-//         <FaBars />
-//       </StyledNavbarToggle>
-//       <StyledNavbarCollapse id='basic-navbar-nav'>
-//         <StyledNav className='nav-row'>
-//           {/* <StyledNavLink as={Link} to='/home' className={`nav-links nav-border ${expanded ? 'active' : ''}`}>01 : Home</StyledNavLink>
-//           <StyledNavLink as={Link} to='/cv' className={`nav-links nav-border ${expanded ? 'active' : ''}`}>02 : CV</StyledNavLink>
-//           <StyledNavLink as={Link} to='/projects' className={`nav-links ${expanded ? 'active' : ''}`}>03 : Projects</StyledNavLink> */}
-//         </StyledNav>
-//       </StyledNavbarCollapse>
-//     </StyledNavbar>
-//   );
-// };
+    &.first-navlink {
+        padding-left: 0 !important;
+    }
 
-// export default NavigationBar;
+    &.no-underline {
+        text-decoration: none;
+    }
+
+    ${({ borderRight }) => borderRight && 'border-right: 1px solid currentColor;'}
+`;
+
+const NavigationBar = () => {
+    const router = useRouter();
+
+    const [expanded, setExpanded] = useState(false);
+
+    const toggleNavbar = () => {
+        setExpanded(!expanded);
+    };
+
+    return (
+        <StyledNavbar
+            className={`${expanded ? 'navbar-expanded' : ''}`}
+            expand='lg'
+            expanded={expanded}
+            fixed='top'
+        >
+            <StyledNavbarToggle aria-controls='basic-navbar-nav' onClick={toggleNavbar}>
+                <FaBars />
+            </StyledNavbarToggle>
+            <StyledNavbarCollapse id='basic-navbar-nav'>
+                <StyledNav className='nav-row'>
+                    <Link href='/' passHref style={{ textDecoration: 'none' }}>
+                        <StyledNavLink
+                            className='primary-text first-navlink'
+                            borderRight
+                            onClick={() => router.push('/')}
+                            aria-current={router.pathname === '/' ? 'page' : undefined}
+                        >
+                            01 : Home
+                        </StyledNavLink>
+                    </Link>
+                    <Link href='/cv' passHref style={{ textDecoration: 'none' }}>
+                        <StyledNavLink
+                            className='primary-text'
+                            borderRight
+                            onClick={() => router.push('/cv')}
+                            aria-current={router.pathname === '/cv' ? 'page' : undefined}
+                        >
+                            02 : CV
+                        </StyledNavLink>
+                    </Link>
+                    <Link href='/projects' passHref style={{ textDecoration: 'none' }}>
+                        <StyledNavLink
+                            className='primary-text'
+                            onClick={() => router.push('/projects')}
+                            aria-current={router.pathname === '/projects' ? 'page' : undefined}
+                        >
+                            03 : Projects
+                        </StyledNavLink>
+                    </Link>
+                </StyledNav>
+            </StyledNavbarCollapse>
+        </StyledNavbar>
+    );
+};
+
+export default NavigationBar;
