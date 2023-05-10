@@ -5,9 +5,11 @@ import styled from 'styled-components';
 
 const BioContainer = styled.div`
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-start !important;
-    width: auto !important;
+
+    @media (max-width: 48rem) {
+        flex-direction: column !important;
+    }
 `;
 
 const LeftCol = styled.div`
@@ -15,9 +17,8 @@ const LeftCol = styled.div`
     height: 100%;
     max-width: 100%;
     padding-right: 8rem;
-    margin-left: 0 !important;
 
-    @media (max-width: 768px) {
+    @media (max-width: 48rem) {
         padding-right: 0;
     }
 `;
@@ -30,7 +31,7 @@ const RightCol = styled.div`
     flex-direction: column;
     align-items: flex-start;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 75rem) {
         width: 100%;
         max-width: 100%;
         align-items: left;
@@ -51,31 +52,38 @@ const LinksContainer = styled.div`
     display: flex;
     flex-direction: column;
     line-height: 6rem;
-    width: auto;
+    width: 100%;
 
     a {
         color: #1E2F53;
         transition: all 0.2s ease-in-out;
 
         &:hover {
-        color: #FBFF00;
+            color: #FBFF00;
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 59.5rem) {
         flex-direction: row;
         align-self: center;
         width: auto;
         a {
-        line-height: 0;
-        margin-right: 3rem;
+            line-height: 0;
+            margin-right: 4rem;
         }
     }
 
-    @media (max-width: 496px) {
+    @media (max-width: 37.5rem) {
         a {
-        margin-right: 1rem;
+            margin-right: 2rem;
         }
+    }
+
+    @media (max-width: 29.5rem) {
+        a {
+            margin-right: 1rem;
+        }
+        align-self: flex-start;
     }
 `;
 
@@ -86,9 +94,9 @@ const EmailLink = styled.a`
     text-decoration: none;
     line-height: 3rem;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 75rem) {
         span {
-        display: none;
+            display: none;
         }
     }
 `;

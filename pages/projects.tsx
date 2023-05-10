@@ -1,12 +1,11 @@
-import NavigationBar from '@/src/components/Navbar';
 import ProjectData from '@/src/data/projectData.json';
 import { splitSummaryIntoParagraphs } from '@/src/helpers/common';
 import Footer from '@/src/shared-components/Footer';
 import ProjectItem from '@/src/shared-components/ListItem';
+import NavigationBar from '@/src/shared-components/Navbar';
 import styled from 'styled-components';
 
 const ProjectsContainer = styled.div`
-    display: flex;
     flex-direction: column;
     align-items: flex-start !important;
 `;
@@ -37,20 +36,22 @@ const Projects = () => {
     const { projectsList } = ProjectData;
 
     return (
-        <ProjectsContainer className='page-container'>
+        <>
             <NavigationBar />
-            <ProjectTitle className='header-text'>Projects.</ProjectTitle>
-            <ProjectContent>
-                <div className='row'>
-                    {projectsList.map((item, index) => (
-                        <ProjectRow key={index}>
-                            <ProjectItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
-                        </ProjectRow>
-                    ))}
-                </div>
-                <Footer />
-            </ProjectContent>
-        </ProjectsContainer>
+            <ProjectsContainer className='page-container'>
+                <ProjectTitle className='header-text'>Projects.</ProjectTitle>
+                <ProjectContent>
+                    <div className='row'>
+                        {projectsList.map((item, index) => (
+                            <ProjectRow key={index}>
+                                <ProjectItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
+                            </ProjectRow>
+                        ))}
+                    </div>
+                </ProjectContent>
+            </ProjectsContainer>
+            <Footer />
+        </>
     );
 };
 

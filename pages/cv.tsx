@@ -1,12 +1,11 @@
-import NavigationBar from '@/src/components/Navbar';
 import cvData from '@/src/data/cvData.json';
 import { splitSummaryIntoParagraphs } from '@/src/helpers/common';
 import Footer from '@/src/shared-components/Footer';
 import CvItem from '@/src/shared-components/ListItem';
+import NavigationBar from '@/src/shared-components/Navbar';
 import styled from 'styled-components';
 
 const CvContainer = styled.div`
-    display: flex;
     flex-direction: column;
     align-items: flex-start !important;
 `;
@@ -42,37 +41,39 @@ const Cv = () => {
     const { educationList, experienceList } = cvData;
 
     return (
-        <CvContainer className='page-container'>
+        <>
             <NavigationBar />
-            <CvTitle className='header-text'>Curriculum Vitae.</CvTitle>
-            <CvContent>
-                <div className='row'>
-                    <div className='col-12'>
-                        <SectionHeader className='header-text'>Education</SectionHeader>
-                    </div>
-                    {educationList.map((item, index) => (
-                        <div className='col-md-6' key={index}>
-                            <CvRow>
-                                <CvItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
-                            </CvRow>
+            <CvContainer className='page-container'>
+                <CvTitle className='header-text'>Curriculum Vitae.</CvTitle>
+                <CvContent>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <SectionHeader className='header-text'>Education</SectionHeader>
                         </div>
-                    ))}
-                </div>
-                <div className='row'>
-                    <div className='col-12'>
-                        <SectionHeader className='header-text'>Experience</SectionHeader>
+                        {educationList.map((item, index) => (
+                            <div className='col-md-6' key={index}>
+                                <CvRow>
+                                    <CvItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
+                                </CvRow>
+                            </div>
+                        ))}
                     </div>
-                    {experienceList.map((item, index) => (
-                        <div className='col-md-6' key={index}>
-                            <CvRow>
-                                <CvItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
-                            </CvRow>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <SectionHeader className='header-text'>Experience</SectionHeader>
                         </div>
-                    ))}
-                </div>
-                <Footer />
-            </CvContent>
-        </CvContainer>
+                        {experienceList.map((item, index) => (
+                            <div className='col-md-6' key={index}>
+                                <CvRow>
+                                    <CvItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
+                                </CvRow>
+                            </div>
+                        ))}
+                    </div>
+                </CvContent>
+            </CvContainer>
+            <Footer />
+        </>
     );
 };
 

@@ -10,7 +10,6 @@ const HeroImage = styled.div`
     background-position: center;
     object-fit: cover;
     width: 100% !important;
-
 `;
 
 const HeroContent = styled(Container)`
@@ -22,10 +21,10 @@ const HeroContent = styled(Container)`
 
 const HeroText = styled.h1`
     color: white;
-    font-size: 3.25rem;
+    font-size: 3.3rem;
     font-weight: bold;
     line-height: 1.5;
-    text-shadow: 0 0 25px #000050;
+    text-shadow: 0 0 1.5625rem #1E2F53;
 `;
 
 const Hero = () => {
@@ -36,7 +35,7 @@ const Hero = () => {
                     <HeroText>
                         <span>Hello, I am</span><br />
                         <Typed
-                            strings={['Thomas Stirling', 'a software engineer', 'a machine learning and AI enthusiast', 'a film, fashion and art enjoyer',]}
+                            strings={['Thomas Stirling.', 'a software engineer.', 'a machine learning and AI enthusiast.', 'a film, fashion and art enjoyer.',]}
                             typeSpeed={50}
                             backSpeed={25}
                             backDelay={1250}

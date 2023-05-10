@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-    margin-top: 6rem !important;
+    margin: 6rem 0 2rem 0 !important;
+    margin: 0;
+    align-self: center;
     text-align: center;
+    width: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 48rem) {
         font-size: 0.8rem !important;
     }
 `;
 
 const Footer = () => {
     return (
-        <FooterContainer className='page-container primary-text'>
+        <FooterContainer className='primary-text'>
             <p>&copy; Thomas Stirling, 2023.</p>
         </FooterContainer>
     );

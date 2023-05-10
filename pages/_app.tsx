@@ -6,19 +6,25 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Roboto Mono', Helvetica, Arial, sans-serif;
         margin: auto !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
     }
 
     .header-text {
         color: #1E2F53;
         font-size: 2rem;
-        letter-spacing: .8px;
+        letter-spacing: 0.05rem;
         margin-bottom: 1.5rem;
     }
 
     .primary-text {
         font-size: 1rem;
         color: #666;
-        letter-spacing: .8px;
+        letter-spacing: 0.05rem;
         line-height: 1.8rem;
         text-decoration: none;
     }
