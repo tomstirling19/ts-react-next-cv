@@ -31,8 +31,8 @@ const StyledNavbar = styled(Navbar)`
 const StyledNavbarToggle = styled(Navbar.Toggle)`
     display: none;
     margin-bottom: .5rem;
-    min-width: 6rem !important;
-    max-width: 6rem;
+    min-width: 3rem !important;
+    max-width: 3rem;
     border: 0.125rem solid #1E2F538F !important;
     background-color: #1E2F538F !important;
     border-radius: .5rem;
@@ -101,7 +101,7 @@ const StyledNavLink = styled.button<StyledNavLinkProps>`
         }
     }
 
-    @media(max-width: 23.25rem) {
+    @media(max-width: 24rem) {
         letter-spacing: 0;
         font-size: .75rem !important;
     }
