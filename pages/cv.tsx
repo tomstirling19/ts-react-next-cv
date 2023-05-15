@@ -42,7 +42,7 @@ const Cv = () => {
 
     return (
         <>
-            <NavigationBar />
+            <NavigationBar navbarColour={''} />
             <CvContainer className='page-container'>
                 <CvTitle className='header-text'>Curriculum Vitae.</CvTitle>
                 <CvContent>

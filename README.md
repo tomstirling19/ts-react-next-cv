@@ -7,6 +7,6 @@ Personal codebase for my Digital CV. As seen here: [tmstrlng.com](https://tmstrl
 - Typescript
 
 # S3
-- next build
-- next export
-- aws s3 sync out s3://<s3-bucket-name>
+- npm run build
+- npm run export
+- aws s3 sync out s3://"s3-bucket-name"

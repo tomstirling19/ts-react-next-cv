@@ -37,7 +37,7 @@ const Projects = () => {
 
     return (
         <>
-            <NavigationBar />
+            <NavigationBar navbarColour={''} />
             <ProjectsContainer className='page-container'>
                 <ProjectTitle className='header-text'>Projects.</ProjectTitle>
                 <ProjectContent>
