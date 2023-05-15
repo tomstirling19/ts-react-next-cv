@@ -2,6 +2,7 @@ import Bio from '@/src/components/Bio';
 import Hero from '@/src/components/Hero';
 import Footer from '@/src/shared-components/Footer';
 import NavigationBar from '@/src/shared-components/Navbar';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const IndexContainer = styled.div`
@@ -16,12 +17,14 @@ const IndexContent = styled.div`
 `;
 
 const Index = () => {
+    const [navbarColour, setNavbarColour] = useState<string>('#FFFFFF');
+
     return (
         <>
-            <NavigationBar />
+            <NavigationBar navbarColour={navbarColour} />
             <IndexContainer>
                 <IndexContent>
-                    <Hero />
+                    <Hero setNavbarColour={setNavbarColour} />
                     <Bio />
                 </IndexContent>
             </IndexContainer>

@@ -52,7 +52,7 @@ const LinksContainer = styled.div`
     display: flex;
     flex-direction: column;
     line-height: 6rem;
-    width: 100%;
+    width: auto;
 
     a {
         color: #1E2F53;
@@ -80,10 +80,25 @@ const LinksContainer = styled.div`
     }
 
     @media (max-width: 29.5rem) {
+        align-self: flex-start;
+    }
+
+    @media (max-width: 27rem) {
         a {
             margin-right: 1rem;
         }
-        align-self: flex-start;
+    }
+
+    @media (max-width: 23.5rem) {
+        a {
+            margin-right: .75rem;
+        }
+    }
+
+    @media (max-width: 21rem) {
+        a {
+            margin-right: .5rem;
+        }
     }
 `;
 

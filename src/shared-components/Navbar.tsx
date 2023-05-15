@@ -9,6 +9,10 @@ interface StyledNavLinkProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     borderRight?: boolean;
 }
 
+type NavigationBarProps = {
+    navbarColour: string;
+}
+
 const NavbarContainer = styled.div`
     flex-direction: column;
     align-items: flex-start !important;
@@ -21,6 +25,7 @@ const StyledNavbar = styled(Navbar)`
     z-index: 1;
     top: 0;
     margin-top: 5rem !important;
+    padding-right: 2rem;
 `;
 
 const StyledNavbarToggle = styled(Navbar.Toggle)`
@@ -31,6 +36,10 @@ const StyledNavbarToggle = styled(Navbar.Toggle)`
     border: 0.125rem solid #1E2F538F !important;
     background-color: #1E2F538F !important;
     border-radius: .5rem;
+
+    .navbar-toggler-icon {
+        margin-top: 2rem !important;
+    }
 
     @media (max-width: 40rem) {
         display: block;
@@ -91,18 +100,20 @@ const StyledNavLink = styled.button<StyledNavLinkProps>`
             padding-left: 1rem !important;
         }
     }
-    `;
 
-const NavigationBar = () => {
+    @media(max-width: 23.25rem) {
+        letter-spacing: 0;
+    }
+`;
+
+const NavigationBar: React.FC<NavigationBarProps> = ({ navbarColour }) => {
     const router = useRouter();
-
     const [expanded, setExpanded] = useState(false);
-
     const toggleNavbar = () => {
         setExpanded(!expanded);
     };
 
-    const textColor = router.pathname === '/' ? '#FFFFFF' : undefined;
+    const textColour = router.pathname === '/' ? navbarColour : undefined;
 
     return (
         <ThemeProvider theme={{ expanded }}>
@@ -113,7 +124,7 @@ const NavigationBar = () => {
                     fixed='top'
                 >
                     <StyledNavbarToggle aria-controls='basic-navbar-nav' onClick={toggleNavbar}>
-                        <FaBars />
+                        <FaBars color='white' style={{ marginTop: '.2rem' }} />
                     </StyledNavbarToggle>
                     <StyledNavbarCollapse id='basic-navbar-nav'>
                         <StyledNav className='nav-row'>
@@ -123,7 +134,7 @@ const NavigationBar = () => {
                                     borderRight
                                     onClick={() => router.push('/')}
                                     aria-current={router.pathname === '/' ? 'page' : undefined}
-                                    style={{ color: textColor }}
+                                    style={{ color: textColour }}
                                 >
                                     01 : Home
                                 </StyledNavLink>
@@ -134,7 +145,7 @@ const NavigationBar = () => {
                                     borderRight
                                     onClick={() => router.push('/cv')}
                                     aria-current={router.pathname === '/cv' ? 'page' : undefined}
-                                    style={{ color: textColor }}
+                                    style={{ color: textColour }}
                                 >
                                     02 : CV
                                 </StyledNavLink>
@@ -144,7 +155,7 @@ const NavigationBar = () => {
                                     className='primary-text'
                                     onClick={() => router.push('/projects')}
                                     aria-current={router.pathname === '/projects' ? 'page' : undefined}
-                                    style={{ color: textColor }}
+                                    style={{ color: textColour }}
                                 >
                                     03 : Projects
                                 </StyledNavLink>
