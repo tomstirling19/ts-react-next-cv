@@ -41,7 +41,7 @@ const StyledNavbarToggle = styled(Navbar.Toggle)`
         margin-top: 2rem !important;
     }
 
-    @media (max-width: 40rem) {
+    @media (max-width: 56rem) {
         display: block;
     }
 `;
@@ -49,14 +49,14 @@ const StyledNavbarToggle = styled(Navbar.Toggle)`
 const StyledNavbarCollapse = styled.div`
   display: none;
 
-  @media (max-width: 40rem) {
+  @media (max-width: 56rem) {
     display: ${props => props.theme.expanded ? 'block' : 'none'} !important;
     background-color: #1E2F538F !important;
     border-radius: .5rem;
     border: 0.125rem solid #1E2F538F !important;
   }
 
-  @media (min-width: 40.125rem) {
+  @media (min-width: 56.125rem) {
     display: block !important;
   }
 `;
@@ -92,7 +92,7 @@ const StyledNavLink = styled.button<StyledNavLinkProps>`
 
     ${({ borderRight }) => borderRight && 'border-right: 0.0625rem solid currentColor;'}
 
-    @media(max-width: 40.0625rem) {
+    @media(max-width: 56.0625rem) {
         text-align: left;
         color: #FFFFFF !important;
         
@@ -103,6 +103,7 @@ const StyledNavLink = styled.button<StyledNavLinkProps>`
 
     @media(max-width: 23.25rem) {
         letter-spacing: 0;
+        font-size: .75rem !important;
     }
 `;
 

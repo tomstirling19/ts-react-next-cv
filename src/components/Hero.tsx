@@ -31,11 +31,19 @@ const HeroText = styled.h1`
     line-height: 1.5;
     text-shadow: 0 0 1.5625rem #1E2F53;
 
-    @media (max-width: 35.75rem) {
+    @media screen and (max-width: 56rem) and (orientation: landscape) {
         font-size: 2.75rem;
     }
 
-    @media (max-width: 26.75rem) {
+    @media screen and (max-width: 37.5rem) and (orientation: landscape) {
+        font-size: 2.4rem;
+    }
+
+    @media (max-width: 35.75rem) and (orientation: portrait) {
+        font-size: 2.75rem;
+    }
+
+    @media (max-width: 26.75rem) and (orientation: portrait) {
         font-size: 2.4rem;
     }
 `;
