@@ -6,6 +6,7 @@
     "ci": "rm -rf node_modules && npm install --force",
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint --force",
     "deploy": "next build && next export && gh-pages -d out -b gh-pages"
