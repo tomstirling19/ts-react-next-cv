@@ -1,3 +1,4 @@
+import React from 'react';
 import ProjectData from '@/src/data/projectData.json';
 import { splitSummaryIntoParagraphs } from '@/src/helpers/common';
 import Footer from '@/src/shared-components/Footer';
@@ -32,6 +33,12 @@ const ProjectTitle = styled.h1`
     padding-top: 14rem;
 `;
 
+const ProjectLink = styled.a`
+    text-decoration: none;
+`;
+
+const ProjectLinkContainer = styled.div``;
+
 const Projects = () => {
     const { projectsList } = ProjectData;
 
@@ -44,7 +51,11 @@ const Projects = () => {
                     <div className='row'>
                         {projectsList.map((item, index) => (
                             <ProjectRow key={index}>
-                                <ProjectItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
+                                <ProjectLinkContainer>
+                                    <ProjectLink href={item.link}>
+                                        <ProjectItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
+                                    </ProjectLink>
+                                </ProjectLinkContainer>
                             </ProjectRow>
                         ))}
                     </div>
