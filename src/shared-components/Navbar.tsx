@@ -36,6 +36,7 @@ const StyledNavbarToggle = styled(Navbar.Toggle)`
     border: 0.125rem solid #1E2F538F !important;
     background-color: #1E2F538F !important;
     border-radius: .5rem;
+    padding: .4rem;
 
     .navbar-toggler-icon {
         margin-top: 2rem !important;

@@ -12,7 +12,7 @@ const ProjectsContainer = styled.div`
 `;
 
 const ProjectContent = styled.div`
-    width: 100%;
+    width: auto;
 `;
 
 const ProjectRow = styled.div`
