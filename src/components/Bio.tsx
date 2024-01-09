@@ -128,11 +128,14 @@ const Bio = () => {
                         Science - 1st Class).
                     </p>
                     <p>
-                        My greatest interests lie in AI and ML, with keen interests in
+                        My greatest interests lie in AI, ML and data, with keen interests in
                         Blockchain, Web3 and application development (Web / Mobile).
                     </p>
                     <p>I&apos;m currently:</p>
                     <ul>
+                        <li>
+                            Developing a finance-related mobile application.
+                        </li>
                         <li>
                             Strengthening my skillset in machine learning model development
                             (LLMs, NNs).
@@ -146,7 +149,8 @@ const Bio = () => {
                             within the AI/ML space.
                         </li>
                         <li>
-                            Working on application development within an international company.
+                            Working on internal data-focused projects, primarily utilizing Kotlin, 
+                            with my current employer (Sky Betting and Gaming).
                         </li>
                     </ul>
                 </BioText>
