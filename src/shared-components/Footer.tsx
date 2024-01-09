@@ -15,7 +15,7 @@ const FooterContainer = styled.footer`
 const Footer = () => {
     return (
         <FooterContainer className='primary-text'>
-            <p>&copy; Thomas Stirling, 2023.</p>
+            <p>&copy; Thomas Stirling, 2024.</p>
         </FooterContainer>
     );
 };
