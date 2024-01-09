@@ -1,10 +1,10 @@
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ButtonHTMLAttributes, useState } from 'react';
 import { Navbar } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa';
-import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { ThemeProvider } from 'styled-components';
 
 interface StyledNavLinkProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,7 +24,7 @@ const StyledNavbar = styled(Navbar)`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -46,7 +46,7 @@ const StyledNavbarToggle = styled(Navbar.Toggle)`
         margin-top: 2rem !important;
     }
 
-    @media (max-width: 32.75rem) {
+    @media (max-width: 40.75rem) {
         display: block;
     }
 `;
@@ -54,27 +54,27 @@ const StyledNavbarToggle = styled(Navbar.Toggle)`
 const StyledNavbarCollapse = styled.div`
   display: none;
 
-  @media (max-width: 32.75rem) {
+  @media (max-width: 40.75rem) {
     display: ${props => props.theme.expanded ? 'block' : 'none'} !important;
     background-color: #1E2F538F !important;
     border-radius: .5rem;
     border: 0.125rem solid #1E2F538F !important;
   }
 
-  @media (min-width: 32.875rem) {
+  @media (min-width: 40.875rem) {
     display: block !important;
   }
 `;
 
 const StyledNav = styled.nav`
-    flex-direction: row !important;
     display: flex;
+    flex-direction: row !important;
     padding: .2rem;
     border-radius: 1.25rem !important;
 `;
 
 const StyledNavLink = styled.button<StyledNavLinkProps>`
-    display: block;
+    display: flex;
     padding: 0 1rem !important;
     background: none;
     border: none;
@@ -97,10 +97,11 @@ const StyledNavLink = styled.button<StyledNavLinkProps>`
 
     ${({ borderRight }) => borderRight && 'border-right: 0.0625rem solid currentColor;'}
 
-    @media(max-width: 32.75rem) {
+    @media(max-width: 40.75rem) {
         text-align: left;
         color: #FFFFFF !important;
-        
+        margin: .05rem;
+
         &.first-navlink {
             padding-left: 1rem !important;
         }
@@ -112,35 +113,43 @@ const StyledNavLink = styled.button<StyledNavLinkProps>`
     }
 `;
 
-const DonwloadLinkContainer = styled.div`
+const DownloadLink = styled.div<StyledNavLinkProps>`
     display: flex;
     position: absolute;
     width: max-content;
-    padding: .15rem 1rem !important;
-    margin-left: 22.5rem;
+    padding: 0.15rem 1rem !important;
+    margin-left: 23rem;
 
-    &:hover {
-        font-weight: 600;
-        text-decoration: none !important;
-    }
-    
-    &.no-underline {
-        text-decoration: none;
-    }
-
-    @media(max-width: 32.75rem) {
-        margin-top: .5rem;
+    @media(max-width: 40.75rem) {
+        margin-top: 0.5rem;
         margin-left: 4rem !important;
         text-align: left;
     }
-`;
 
-const DownloadLink = styled.button<StyledNavLinkProps>`
-    background: none;
-    border: none;
-    font-family: inherit;
-    line-height: 1rem !important;
-    font-size: .9rem !important;
+    button {
+        background: none;
+        border: none;
+        font-family: inherit;
+        line-height: 1rem !important;
+        font-size: 0.9rem !important;
+        padding: 0.05rem 0.05rem 0.05rem 1rem;
+        cursor: pointer;
+
+        &:hover {
+        font-weight: 600;
+        text-decoration: none !important;
+        }
+    }
+
+    &:hover {
+        button {
+            font-weight: 600;
+        }
+    }
+
+    svg:hover + button {
+        font-weight: 600;
+    }
 `;
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ navbarColour }) => {
@@ -209,20 +218,16 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ navbarColour }) => {
                             </Link>
                         </StyledNav>
                     </StyledNavbarCollapse>
-                    <DonwloadLinkContainer>
-                        <FontAwesomeIcon 
-                            icon={faDownload} 
-                            size='1x' 
-                            style={{ color: textColour }}
-                        />
-                        <DownloadLink 
+                    <DownloadLink onClick={() => downloadCV()}>
+                        <FontAwesomeIcon icon={faDownload} size='1x' style={{ color: textColour }} />
+                        <button
                             className='primary-text'
-                            onClick={() => downloadCV()}
                             aria-current={router.pathname === '/projects' ? 'page' : undefined}
                             style={{ color: textColour }}
-                        > Download CV
-                        </DownloadLink>
-                    </DonwloadLinkContainer>
+                        >
+                            Download CV
+                        </button>
+                    </DownloadLink>
                 </StyledNavbar>
             </NavbarContainer>
         </ThemeProvider>
