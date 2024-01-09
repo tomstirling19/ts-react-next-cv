@@ -116,6 +116,11 @@ const DonwloadLinkContainer = styled.div`
     display: flex;
     padding: 0.15rem 1rem !important;
 
+    &:hover {
+        font-weight: 600;
+        text-decoration: none !important;
+    }
+    
     &.no-underline {
         text-decoration: none;
     }
