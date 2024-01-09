@@ -25,7 +25,7 @@ const StyledNavbar = styled(Navbar)`
     flex-wrap: wrap;
     justify-content: flex-start !important;
     flex-direction: row !important;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     margin-top: 5rem !important;
@@ -114,7 +114,10 @@ const StyledNavLink = styled.button<StyledNavLinkProps>`
 
 const DonwloadLinkContainer = styled.div`
     display: flex;
-    padding: 0.15rem 1rem !important;
+    position: absolute;
+    width: max-content;
+    padding: .15rem 1rem !important;
+    margin-left: 22.5rem;
 
     &:hover {
         font-weight: 600;
@@ -126,7 +129,6 @@ const DonwloadLinkContainer = styled.div`
     }
 
     @media(max-width: 32.75rem) {
-        position: fixed;
         margin-top: .5rem;
         margin-left: 4rem !important;
         text-align: left;
