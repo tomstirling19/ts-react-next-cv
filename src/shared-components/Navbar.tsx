@@ -133,7 +133,6 @@ const DownloadLink = styled.div<StyledNavLinkProps>`
         line-height: 1rem !important;
         font-size: 0.9rem !important;
         padding: 0.05rem 0.05rem 0.05rem 1rem;
-        cursor: pointer;
 
         &:hover {
         font-weight: 600;
