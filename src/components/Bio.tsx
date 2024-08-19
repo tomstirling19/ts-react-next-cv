@@ -48,6 +48,10 @@ const BioText = styled.div`
     text-align: left;
 `;
 
+const BioTextContent = styled.div`
+    margin-top: 2rem;
+`;
+
 const LinksContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -123,36 +127,54 @@ const Bio = () => {
                 <BioTitle className='header-text'>Welcome.</BioTitle>
                 <BioText className='primary-text'>
                     <p>
-                        My name is Thomas Stirling (or Tom). I graduated from the University
-                        of Leeds with a Masters in Computer Science (MEng & BSc Computer
-                        Science - 1st Class).
+                    My name is Thomas Stirling, though I often go by Tom.
+                    I hold a Master’s degree in Computer Science from the University of Leeds (MEng & BSc, First Class).
                     </p>
                     <p>
-                        My greatest interests lie in AI, ML and data, with keen interests in
-                        Blockchain, Web3 and application development (Web / Mobile).
+                        My greatest interests lie in AI, ML, data, and application development (Web / Mobile).
+                        I’m enthusiastic with all things tech and try to stay updated with the latest industry developments.
                     </p>
-                    <p>I&apos;m currently:</p>
-                    <ul>
-                        <li>
-                            Developing a finance-related mobile application.
-                        </li>
-                        <li>
-                            Strengthening my skillset in machine learning model development
-                            (LLMs, NNs).
-                        </li>
-                        <li>
-                            Learning how to design end-to-end machine learning systems
-                            (tooling, design and deployment).
-                        </li>
-                        <li>
-                            Keeping up-to-date with breakthrough research and development
-                            within the AI/ML space.
-                        </li>
-                        <li>
-                            Working on internal data-focused projects, primarily utilizing Kotlin, 
-                            with my current employer (Sky Betting and Gaming).
-                        </li>
-                    </ul>
+                    <BioTextContent className='primary-text'>
+                        <p>Currently I’m:</p>
+                        <ul>
+                            <li>
+                                Developing a language learning mobile application called Bamboo using Golang and React native.
+                            </li>
+                            <li>
+                                Strengthening my skillset in machine learning model development
+                                (LLMs, NNs).
+                            </li>
+                            <li>
+                                Learning how to design end-to-end machine learning systems
+                                (tooling, design and deployment).
+                            </li>
+                            <li>
+                                Keeping up-to-date with breakthrough research and development
+                                within the AI/ML space.
+                            </li>
+                            <li>
+                                Working on internal data-focused projects utilising Kotlin and Java
+                                with my current employer, Sky Betting and Gaming.
+                            </li>
+                        </ul>
+                    </BioTextContent>
+                    <BioTextContent>
+                        <p>My non-tech related interests include:</p>
+                        <ul>
+                            <li>
+                                Playing tennis - I try and play as much as I can, but the UK weather does its best to stop me.
+                            </li>
+                            <li>
+                                Fashion - I’m particularly interested in Japanese casual and outdoor wear.
+                            </li>
+                            <li>  
+                                Art and Sketching - Stupid doodles and badly drawn things.
+                            </li>
+                            <li>
+                                Gaming - My playtime is something I shouldn’t discuss.
+                            </li>
+                        </ul>
+                    </BioTextContent>
                 </BioText>
             </LeftCol>
             <RightCol>
