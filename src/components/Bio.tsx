@@ -128,7 +128,7 @@ const Bio = () => {
                 <BioText className='primary-text'>
                     <p>
                     My name is Thomas Stirling.
-                    I hold a Master’s degree in Computer Science from the University of Leeds (MEng & BSc, First-Class).
+                    I hold a Master’s degree in Computer Science from the University of Leeds (MEng & BSc, First-Class Honours).
                     </p>
                     <p>
                         My greatest interests lie in AI, ML, data, and application development (Web / Mobile).
