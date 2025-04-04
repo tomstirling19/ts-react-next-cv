@@ -159,10 +159,10 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ navbarColour }) => {
     };
 
     const downloadCV = () => {
-        const cv = '/data/thomas-stirling-cv24.pdf';
+        const cv = '/data/thomas-stirling-cv25.pdf';
         const link = document.createElement('a');
         link.href = cv;
-        link.download = 'thomas-stirling-cv24.pdf';
+        link.download = 'thomas-stirling-cv25.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
