@@ -138,7 +138,11 @@ const Bio = () => {
                         <p>Currently I’m:</p>
                         <ul>
                             <li>
-                                Developing a language learning mobile application called Bamboo using Golang and React native.
+                                Developing a language learning mobile application called Bamboo using Go and React native.
+                            </li>
+                            <li>
+                                Working on internal data-focused projects utilising Kotlin and Java
+                                with my current employer, Sky Betting and Gaming.
                             </li>
                             <li>
                                 Strengthening my skillset in machine learning model development
@@ -151,10 +155,6 @@ const Bio = () => {
                             <li>
                                 Keeping up-to-date with breakthrough research and development
                                 within the AI/ML space.
-                            </li>
-                            <li>
-                                Working on internal data-focused projects utilising Kotlin and Java
-                                with my current employer, Sky Betting and Gaming.
                             </li>
                         </ul>
                     </BioTextContent>
