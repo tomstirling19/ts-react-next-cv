@@ -135,26 +135,25 @@ const Bio = () => {
                         I’m enthusiastic with all things tech and try to stay updated with the latest industry developments.
                     </p>
                     <BioTextContent className='primary-text'>
-                        <p>Currently I’m:</p>
+                        <p>Right now, I'm working on:</p>
                         <ul>
                             <li>
-                                Developing a language learning mobile application called Bamboo using Go and React native.
+                                Developing <strong>Bamboo</strong> — a language learning mobile app using Go and React Native.
                             </li>
                             <li>
-                                Working on internal data-focused projects utilising Kotlin and Java
-                                with my current employer, Sky Betting and Gaming.
+                                Building high-throughput, real-time event processing systems at scale using Kotlin and Java at Sky Betting & Gaming — powering core betting features and handling thousands of requests per second.
                             </li>
                             <li>
-                                Strengthening my skillset in machine learning model development
-                                (LLMs, NNs).
+                                Maintaining production-critical infrastructure and participating in an on-call rotation across a large distributed stack (Kafka, Kubernetes, MongoDB, Cassandra).
                             </li>
                             <li>
-                                Learning how to design end-to-end machine learning systems
-                                (tooling, design and deployment).
+                                Strengthening my skills in machine learning model development (LLMs, neural networks).
                             </li>
                             <li>
-                                Keeping up-to-date with breakthrough research and development
-                                within the AI/ML space.
+                                Learning to design and deploy end-to-end ML systems, with a focus on tooling, orchestration, and scalability.
+                            </li>
+                            <li>
+                                Staying up to date with breakthroughs in AI/ML research and infrastructure development.
                             </li>
                         </ul>
                     </BioTextContent>
