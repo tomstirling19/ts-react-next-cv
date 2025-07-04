@@ -127,15 +127,15 @@ const Bio = () => {
                 <BioTitle className='header-text'>Welcome.</BioTitle>
                 <BioText className='primary-text'>
                     <p>
-                    My name is Thomas Stirling.
-                    I hold a Master’s degree in Computer Science from the University of Leeds (MEng & BSc, First-Class Honours).
+                        My name is Thomas Stirling.
+                        I hold a Master’s degree in Computer Science from the University of Leeds (MEng & BSc, First-Class Honours).
                     </p>
                     <p>
                         My greatest interests lie in AI, ML, data, and application development (Web / Mobile).
                         I’m enthusiastic with all things tech and try to stay updated with the latest industry developments.
                     </p>
                     <BioTextContent className='primary-text'>
-                        <p>Right now, I'm working on:</p>
+                        <p>Right now, I am working on:</p>
                         <ul>
                             <li>
                                 Developing <strong>Bamboo</strong> — a language learning mobile app using Go and React Native.
