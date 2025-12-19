@@ -1,12 +1,14 @@
 const path = require('path');
 
-module.exports = {
-  trailingSlash: false,
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: { unoptimized: true },
+
   webpack: (config) => {
     config.resolve.alias['@/src'] = path.join(__dirname, 'src');
     return config;
   },
-  experimental: {
-    turbopack: false,
-  },
 };
+
+module.exports = nextConfig;

@@ -1,3 +1,4 @@
+import type { ComponentPropsWithoutRef } from 'react';
 import cvData from '@/src/data/cvData.json';
 import { splitSummaryIntoParagraphs } from '@/src/helpers/common';
 import Footer from '@/src/shared-components/Footer';
@@ -5,16 +6,17 @@ import CvItem from '@/src/shared-components/ListItem';
 import NavigationBar from '@/src/shared-components/Navbar';
 import styled from 'styled-components';
 
-const CvContainer = styled.div`
+const CvContainer = styled.div<ComponentPropsWithoutRef<'div'>>`
+    display: flex;
     flex-direction: column;
     align-items: flex-start !important;
 `;
 
-const CvContent = styled.div`
+const CvContent = styled.div<ComponentPropsWithoutRef<'div'>>`
     width: 100%;
 `;
 
-const CvRow = styled.div`
+const CvRow = styled.div<ComponentPropsWithoutRef<'div'>>`
     padding: 5rem 0 5rem 8rem !important;
     display: flex;
     align-items: center;
@@ -28,11 +30,11 @@ const CvRow = styled.div`
     }
 `;
 
-const CvTitle = styled.h1`
+const CvTitle = styled.h1<ComponentPropsWithoutRef<'h1'>>`
     padding-top: 14rem;
 `;
 
-const SectionHeader = styled.h2`
+const SectionHeader = styled.h2<ComponentPropsWithoutRef<'h2'>>`
     margin: 8rem 0 4rem 0;
     font-weight: 300;
 `;
@@ -43,29 +45,36 @@ const Cv = () => {
     return (
         <>
             <NavigationBar navbarColour={''} />
-            <CvContainer className='page-container'>
-                <CvTitle className='header-text'>Curriculum Vitae.</CvTitle>
+            <CvContainer className="page-container">
+                <CvTitle className="header-text">Curriculum Vitae.</CvTitle>
                 <CvContent>
-                    <div className='row'>
-                        <div className='col-12'>
-                            <SectionHeader className='header-text'>Education</SectionHeader>
+                    <div className="row">
+                        <div className="col-12">
+                            <SectionHeader className="header-text">Education</SectionHeader>
                         </div>
                         {educationList.map((item, index) => (
-                            <div className='col-md-6' key={index}>
+                            <div className="col-md-6" key={index}>
                                 <CvRow>
-                                    <CvItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
+                                    <CvItem
+                                        {...item}
+                                        summary={splitSummaryIntoParagraphs(item.summary)}
+                                    />
                                 </CvRow>
                             </div>
                         ))}
                     </div>
-                    <div className='row'>
-                        <div className='col-12'>
-                            <SectionHeader className='header-text'>Experience</SectionHeader>
+
+                    <div className="row">
+                        <div className="col-12">
+                            <SectionHeader className="header-text">Experience</SectionHeader>
                         </div>
                         {experienceList.map((item, index) => (
-                            <div className='col-md-6' key={index}>
+                            <div className="col-md-6" key={index}>
                                 <CvRow>
-                                    <CvItem {...item} summary={splitSummaryIntoParagraphs(item.summary)} />
+                                    <CvItem
+                                        {...item}
+                                        summary={splitSummaryIntoParagraphs(item.summary)}
+                                    />
                                 </CvRow>
                             </div>
                         ))}

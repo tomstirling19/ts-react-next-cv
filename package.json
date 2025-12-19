@@ -4,15 +4,17 @@
   "private": true,
   "scripts": {
     "ci": "rm -rf node_modules && npm install --force",
-    "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "export": "next build --webpack",
     "start": "next start",
     "lint": "next lint --force",
     "deploy": "next build && next export && gh-pages -d out -b gh-pages"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/fontawesome-common-types": "^7.1.0",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@types/node": "18.16.3",
     "@types/react": "18.2.2",
@@ -29,7 +31,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
     "@types/react-helmet": "^6.1.6",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-module-resolver": "^5.0.0",

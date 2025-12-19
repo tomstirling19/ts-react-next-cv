@@ -1,8 +1,8 @@
+import type { ComponentPropsWithoutRef } from 'react';
 import styled from 'styled-components';
 
-const FooterContainer = styled.footer`
+const FooterContainer = styled.footer<ComponentPropsWithoutRef<'footer'>>`
     margin: 6rem 0 2rem 0 !important;
-    margin: 0;
     align-self: center;
     text-align: center;
     width: 100%;
@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
 
 const Footer = () => {
     return (
-        <FooterContainer className='primary-text'>
+        <FooterContainer className="primary-text">
             <p>&copy; Thomas Stirling, 2025.</p>
         </FooterContainer>
     );
