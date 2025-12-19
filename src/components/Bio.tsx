@@ -131,7 +131,7 @@ const Bio = () => {
                         I hold a Master’s degree in Computer Science from the University of Leeds (MEng & BSc, First-Class Honours).
                     </p>
                     <p>
-                        My greatest interests lie in AI, ML, data, and application development (Web / Mobile).
+                        My greatest interests lie in AI, ML, data, and application development.
                         I’m enthusiastic with all things tech and try to stay updated with the latest industry developments.
                     </p>
                     <BioTextContent className='primary-text'>
@@ -139,12 +139,6 @@ const Bio = () => {
                         <ul>
                             <li>
                                 Developing <strong>Bamboo</strong> — a language learning mobile app using Go and React Native.
-                            </li>
-                            <li>
-                                Building high-throughput, real-time event processing systems at scale using Kotlin and Java at Sky Betting & Gaming — powering core betting features and handling thousands of requests per second.
-                            </li>
-                            <li>
-                                Maintaining production-critical infrastructure and participating in an on-call rotation across a large distributed stack (Kafka, Kubernetes, MongoDB, Cassandra).
                             </li>
                             <li>
                                 Strengthening my skills in machine learning model development (LLMs, neural networks).
@@ -170,7 +164,7 @@ const Bio = () => {
                                 Art and Sketching - Stupid doodles and badly drawn things.
                             </li>
                             <li>
-                                Gaming - My playtime is something I shouldn’t discuss.
+                                Gaming - My playtime in some games is something I shouldn’t discuss.
                             </li>
                         </ul>
                     </BioTextContent>
