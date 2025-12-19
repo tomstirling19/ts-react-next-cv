@@ -6,4 +6,7 @@ module.exports = {
     config.resolve.alias['@/src'] = path.join(__dirname, 'src');
     return config;
   },
+  experimental: {
+    turbopack: false,
+  },
 };

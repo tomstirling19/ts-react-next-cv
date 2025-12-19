@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
-import Typed from 'react-typed';
+import { ReactTyped } from 'react-typed';
 import styled from 'styled-components';
 
 type HeroProps = {
@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ setNavbarColour }) => {
                     <HeroText>
                         <span>Hello, I am</span>
                         <br />
-                        <Typed
+                        <ReactTyped
                             strings={[
                                 'Thomas Stirling.',
                                 'a software engineer.',
